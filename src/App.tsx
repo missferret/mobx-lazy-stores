@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import createStore from "./stores";
+import WithMobx from "./HOCs/withMobx";
+const store = createStore();
 
 function App() {
   return (
@@ -23,4 +26,7 @@ function App() {
   );
 }
 
-export default App;
+export default WithMobx(
+  App,
+  store
+);
